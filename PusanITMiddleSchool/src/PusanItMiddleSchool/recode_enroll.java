@@ -305,7 +305,7 @@ public class recode_enroll extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String S_INDEX = S_Index_Field_ex.getText();
 				String S_NAME = S_Name_Field_ex.getText();
-				String S_TESTDATE = S_testd_ex.getText();
+				String S_RNOTE = S_testd_ex.getText();
 				String S_KOREAN = Korean_Field_ex.getText();
 				String S_MATH = Math_Field_ex.getText();
 				String S_ENGLISH = English_Field_ex.getText();
@@ -313,13 +313,13 @@ public class recode_enroll extends JFrame {
 				String S_SOCIETY = Society_Field_ex.getText();	
 				
 				if (S_INDEX.trim().isEmpty() || S_NAME.trim().isEmpty()
-						|| S_TESTDATE.trim().isEmpty() || S_KOREAN.trim().isEmpty()
+						|| S_RNOTE.trim().isEmpty() || S_KOREAN.trim().isEmpty()
 						|| S_MATH.trim().isEmpty() || S_ENGLISH.trim().isEmpty()
 						|| S_SCIENCE.trim().isEmpty() || S_SOCIETY.trim().isEmpty()) {
 					JOptionPane.showMessageDialog(null, "입력란 빈칸 존재");}
 				else {
 				JOptionPane.showMessageDialog(null, "등록되었습니다.");
-				SQLPusanItMiddleSchool.Input_Recode(S_INDEX, S_NAME,S_TESTDATE,S_KOREAN, S_MATH, S_ENGLISH, S_SCIENCE, S_SOCIETY);
+				SQLPusanItMiddleSchool.Input_Recode(S_INDEX, S_NAME,S_KOREAN, S_MATH, S_ENGLISH, S_SCIENCE, S_SOCIETY,S_RNOTE);
 				}
 				// SQLPusanItMiddleSchool과 연동.
 				// 출결관리 창 작성 후 "등록"을 누르면 MySQL의 tbl_s_recode에 등록된다.

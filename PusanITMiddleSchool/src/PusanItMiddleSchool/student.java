@@ -61,6 +61,22 @@ public class student extends JFrame {
 		
 		contentPane.add(scrollPane);
 		
+		
+		table.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				int row = table.rowAtPoint(e.getPoint());
+				int col = table.columnAtPoint(e.getPoint());
+				String[] headers = { "S_INDEX" , "S_NAME", "S_GENDER", "S_CLASS", "S_BIRTH","S_PHONE","S_NOTE"};
+				String sindex = new String((String) table.getModel().getValueAt(row, 0));				if(row >= 0 && col >= 0) {
+					//JOptionPane.showMessageDialog(null, row+","+col);
+					if(col==0) {
+						JOptionPane.showMessageDialog(null,"학생 번호는 수정 불가합니다.");
+					}else {
+					new datamodify(sindex,headers[col]).setVisible(true);}
+				}
+			}
+		});
+		
 		JButton inputbutton = new JButton("\uD559\uC0DD\uB4F1\uB85D");
 		inputbutton.setBackground(Color.LIGHT_GRAY);
 		inputbutton.setFont(new Font("맑은 고딕", Font.PLAIN, 14));

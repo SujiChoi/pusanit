@@ -68,12 +68,12 @@ public class SQLPusanItMiddleSchool {
 					+"TBL_RECODE("
 					+"S_INDEX varChar(255)," //학색인덱스
 					+"S_NAME varChar(255)," //학생이름
-					+"S_TESTDATE varChar(255)," //시험날짜
 					+"S_KOREAN varChar(255)," //국어
 					+"S_MATH varChar(255)," //수학
 					+"S_ENGLISH varChar(255)," //영어
 					+"S_SCIENCE varChar(255)," //과학
 					+"S_SOCIETY varChar(255)," //사회
+					+"S_RNOTE varChar(255)," //시험날짜
 					+"KEY(S_INDEX))");
 			create.execute();
 			System.out.println("저장했습니다.");
@@ -129,7 +129,7 @@ public class SQLPusanItMiddleSchool {
 		try {
 			Connection conn = getConnection(); // DB 연결
 			PreparedStatement statement = conn.prepareStatement(
-					"SELECT S.S_INDEX, S.S_NAME, R.S_TESTDATE,R.S_KOREAN, R.S_MATH,R.S_ENGLISH,R.S_SCIENCE,R.S_SOCIETY "
+					"SELECT S.S_INDEX, S.S_NAME, R.S_KOREAN, R.S_MATH,R.S_ENGLISH,R.S_SCIENCE,R.S_SOCIETY,R.S_RNOTE "
 					+"FROM pusanttmiddleschooldb.tbl_student S ,pusanttmiddleschooldb.tbl_recode R where S.S_INDEX = R.S_INDEX");
 			ResultSet results = statement.executeQuery();
 			ArrayList<String[]> list = new ArrayList<String[]>();
@@ -137,12 +137,12 @@ public class SQLPusanItMiddleSchool {
 				list.add(new String[] {
 					results.getString("S_INDEX"),
 					results.getString("S_NAME"),
-					results.getString("S_TESTDATE"),
 					results.getString("S_KOREAN"),
 					results.getString("S_MATH"),
 					results.getString("S_ENGLISH"),
 					results.getString("S_SCIENCE"),	
-					results.getString("S_SOCIETY")
+					results.getString("S_SOCIETY"),
+					results.getString("S_RNOTE")
 				});
 			}
 			System.out.println("저장했습니다.");
@@ -180,6 +180,18 @@ public class SQLPusanItMiddleSchool {
 		}
 	}
 	
+	public static void update(String index, String name, String text) {
+		try {
+			Connection conn = getConnection(); // DB 연결 conn객체
+			PreparedStatement update = conn.prepareStatement(
+					"UPDATE tbl_student SET " +name+ "='"+text+"' WHERE S_INDEX="+index);
+			update.execute();
+			System.out.println("업데이트 되었습니다!");
+			
+			} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public static void Input_Student(String S_NAME,String S_GENDER,String S_CLASS,String S_BIRTH,String S_PHONE,String S_NOTE) {
 		try {
@@ -213,8 +225,8 @@ public class SQLPusanItMiddleSchool {
 		catch(Exception e){}
 	}
 	
-	public static void Input_Recode(String S_INDEX,String S_NAME,String S_TESTDATE,String S_KOREAN,String S_MATH,
-			String S_ENGLISH,String S_SCIENCE,String S_SOCIETY) {
+	public static void Input_Recode(String S_INDEX,String S_NAME,String S_KOREAN,String S_MATH,
+			String S_ENGLISH,String S_SCIENCE,String S_SOCIETY,String S_RNOTE) {
 		try {
 			
 			String sindex= S_INDEX; //선택시 불러오기
@@ -224,8 +236,8 @@ public class SQLPusanItMiddleSchool {
 			
 			Connection conn = getConnection(); // db 연결 conn객체
 			PreparedStatement create = conn.prepareStatement(
-					"insert into tbl_recode(S_INDEX,S_NAME,S_TESTDATE,S_KOREAN,S_MATH,S_ENGLISH,S_SCIENCE,S_SOCIETY)"
-					+ "values('"+S_INDEX+"','"+S_NAME+"','"+S_TESTDATE+"','"+S_KOREAN+"','"+S_MATH+"','"+S_ENGLISH+"','"+S_SCIENCE+"','"+S_SOCIETY+"')"
+					"insert into tbl_recode(S_INDEX,S_NAME,S_KOREAN,S_MATH,S_ENGLISH,S_SCIENCE,S_SOCIETY,S_RNOTE)"
+					+ "values('"+S_INDEX+"','"+S_NAME+"','"+S_KOREAN+"','"+S_MATH+"','"+S_ENGLISH+"','"+S_SCIENCE+"','"+S_SOCIETY+"','"+S_RNOTE+"')"
 					);
 			create.execute();
 			System.out.println("성적 정보가 저장했습니다.");
@@ -258,13 +270,15 @@ public class SQLPusanItMiddleSchool {
 			statement.setString(1, sindex);
 			statement.setString(2, sindex);
 			ResultSet results = statement.executeQuery();
-			String[] sbsentlist = new String[4];
+			String[] sbsentlist = new String[6];
 			
 			if(results.next()) { //결과값이 있으면 로그인이 됨
 				sbsentlist[0]=results.getString("S_INDEX");
 				sbsentlist[1]=results.getString("S_NAME");
 				sbsentlist[2]=results.getString("S_BIRTH");
 				sbsentlist[3]=results.getString("S_NOTE");
+				sbsentlist[4]=results.getString("S_CLASS");
+				sbsentlist[5]=results.getString("S_PHONE");
 			//원래 있던창 끄기
 		}
 			System.out.println("검색되었습니다.");

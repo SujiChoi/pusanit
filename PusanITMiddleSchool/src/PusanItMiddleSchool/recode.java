@@ -47,7 +47,7 @@ public class recode extends JFrame {
 		
 		
 		String[][] data = SQLPusanItMiddleSchool.getRecode();	//DB 데이터 연동
-		String[] headers = { "학번", "이름","날짜", "국어", "수학", "영어", "과학","사회" }; 
+		String[] headers = { "학번", "이름","국어", "수학", "영어", "과학","사회","시험종류" }; 
 		
 		DefaultTableModel model = new DefaultTableModel(data, headers);
 		
