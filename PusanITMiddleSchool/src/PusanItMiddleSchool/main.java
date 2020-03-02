@@ -77,7 +77,7 @@ public class main extends JFrame {
 		panel.add(textField_ID);
 		textField_ID.setColumns(10);
 		
-		//비밀번호
+		//비밀번호123
 		JLabel lbPassword = new JLabel("\uBE44\uBC00\uBC88\uD638");
 		lbPassword.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
 		lbPassword.setBounds(67, 127, 83, 29);
