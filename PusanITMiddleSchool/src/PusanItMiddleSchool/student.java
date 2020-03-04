@@ -72,7 +72,7 @@ public class student extends JFrame {
 					if(col==0) {
 						JOptionPane.showMessageDialog(null,"학생 번호는 수정 불가합니다.");
 					}else {
-					new datamodify(sindex,headers[col]).setVisible(true);}
+					new student_modify(sindex,headers[col]).setVisible(true);}
 				}
 			}
 		});

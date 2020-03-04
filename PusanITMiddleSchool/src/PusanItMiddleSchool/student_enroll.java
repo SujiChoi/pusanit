@@ -153,6 +153,7 @@ public class student_enroll extends JFrame {
 		panel.add(Student_Phone);
 
 		S_Phone_Field = new JTextField();
+		S_Phone_Field.setForeground(new Color(211, 211, 211));
 		S_Phone_Field.setHorizontalAlignment(SwingConstants.CENTER);
 		S_Phone_Field.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		S_Phone_Field.setColumns(10);

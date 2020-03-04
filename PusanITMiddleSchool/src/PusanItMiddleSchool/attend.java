@@ -26,6 +26,8 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 
 public class attend extends JFrame {
 
@@ -130,7 +132,7 @@ public class attend extends JFrame {
 		JScrollPane scrollPane = new JScrollPane(table);
 
 		scrollPane.setLocation(38, 128);
-		scrollPane.setSize(550, 449);
+		scrollPane.setSize(615, 449);
 
 		contentPane.add(scrollPane);
 
@@ -149,80 +151,82 @@ public class attend extends JFrame {
 		textField.setColumns(10);
 
 		JPanel panel = new JPanel();
-		panel.setBounds(629, 128, 506, 449);
+		panel.setBorder(new TitledBorder(new LineBorder(new Color(30, 144, 255)), "¼±ÅÃµÈ ÇÐ»ý Á¤º¸", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBackground(new Color(255, 255, 255));
+		panel.setBounds(750, 128, 359, 449);
 		contentPane.add(panel);
 		panel.setLayout(null);
 
 		JLabel lblNewLabel_1_2 = new JLabel("\uD559\uBC88");
 		lblNewLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		lblNewLabel_1_2.setBounds(62, 31, 95, 59);
+		lblNewLabel_1_2.setBounds(57, 45, 95, 59);
 		panel.add(lblNewLabel_1_2);
 
 		JLabel lblNewLabel_1 = new JLabel("\uC774\uB984");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		lblNewLabel_1.setBounds(62, 89, 95, 59);
+		lblNewLabel_1.setBounds(57, 105, 95, 59);
 		panel.add(lblNewLabel_1);
 
 		JLabel lblNewLabel_1_2_2 = new JLabel("\uD559\uBC18");
 		lblNewLabel_1_2_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2_2.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		lblNewLabel_1_2_2.setBounds(62, 148, 95, 59);
+		lblNewLabel_1_2_2.setBounds(57, 165, 95, 59);
 		panel.add(lblNewLabel_1_2_2);
 
 		JLabel lblNewLabel_1_2_1 = new JLabel("\uC0DD\uB144\uC6D4\uC77C");
 		lblNewLabel_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2_1.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		lblNewLabel_1_2_1.setBounds(62, 204, 95, 59);
+		lblNewLabel_1_2_1.setBounds(57, 225, 95, 59);
 		panel.add(lblNewLabel_1_2_1);
 
 		JLabel lblNewLabel_1_2_1_1 = new JLabel("\uD2B9\uC774\uC0AC\uD56D");
 		lblNewLabel_1_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2_1_1.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		lblNewLabel_1_2_1_1.setBounds(62, 324, 95, 59);
+		lblNewLabel_1_2_1_1.setBounds(57, 345, 95, 59);
 		panel.add(lblNewLabel_1_2_1_1);
 
 		JLabel lblNewLabel_1_2_3 = new JLabel("\uC804\uD654\uBC88\uD638");
 		lblNewLabel_1_2_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2_3.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		lblNewLabel_1_2_3.setBounds(62, 260, 95, 59);
+		lblNewLabel_1_2_3.setBounds(57, 285, 95, 59);
 		panel.add(lblNewLabel_1_2_3);
 
 		JLabel S_INDEX = new JLabel();
 		S_INDEX.setHorizontalAlignment(SwingConstants.CENTER);
 		S_INDEX.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		S_INDEX.setBounds(232, 31, 95, 59);
+		S_INDEX.setBounds(209, 45, 95, 59);
 		panel.add(S_INDEX);
 
 		JLabel S_NAME = new JLabel();
 		S_NAME.setHorizontalAlignment(SwingConstants.CENTER);
 		S_NAME.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		S_NAME.setBounds(232, 89, 95, 59);
+		S_NAME.setBounds(209, 105, 95, 59);
 		panel.add(S_NAME);
 
 		JLabel S_CLASS = new JLabel();
 		S_CLASS.setHorizontalAlignment(SwingConstants.CENTER);
 		S_CLASS.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		S_CLASS.setBounds(232, 148, 95, 59);
+		S_CLASS.setBounds(209, 225, 95, 59);
 		panel.add(S_CLASS);
 
 		JLabel S_BIRTH = new JLabel();
 		S_BIRTH.setHorizontalAlignment(SwingConstants.CENTER);
 		S_BIRTH.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		S_BIRTH.setBounds(232, 204, 95, 59);
+		S_BIRTH.setBounds(209, 345, 95, 59);
 		panel.add(S_BIRTH);
 
 		JLabel S_PHONE = new JLabel();
 		S_PHONE.setHorizontalAlignment(SwingConstants.CENTER);
 		S_PHONE.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		S_PHONE.setBounds(232, 260, 95, 59);
+		S_PHONE.setBounds(209, 165, 95, 59);
 		panel.add(S_PHONE);
 
 		JLabel S_NOTE = new JLabel();
 		S_NOTE.setHorizontalAlignment(SwingConstants.CENTER);
 		S_NOTE.setFont(new Font("±¼¸²", Font.PLAIN, 14));
-		S_NOTE.setBounds(232, 324, 95, 59);
+		S_NOTE.setBounds(209, 285, 95, 59);
 		panel.add(S_NOTE);
 
 		JPanel panel_1 = new JPanel();
