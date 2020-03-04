@@ -46,6 +46,8 @@ public class student_modify extends JFrame {
 	 */
 	public student_modify(String index, String name) {
 		setBounds(100, 100, 354, 249);
+		setTitle("ÇÐ»ý Á¤º¸ ¼öÁ¤");
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -60,6 +62,7 @@ public class student_modify extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 16));
 		textArea.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		textArea.setBounds(81, 85, 185, 41);
 		contentPane.add(textArea);
