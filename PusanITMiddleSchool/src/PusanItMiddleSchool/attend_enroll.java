@@ -24,6 +24,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -52,7 +54,7 @@ public class attend_enroll extends JFrame {
 	private JTextField S_Name_att;
 	private JTextField S_Date_att;
 	JLabel Student_Name_att; 
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -176,8 +178,12 @@ public class attend_enroll extends JFrame {
 		Student_Date_ex.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 14));
 		Student_Date_ex.setBounds(74, 150, 90, 30);
 		panel.add(Student_Date_ex);
-
-		S_Date_att = new JTextField();
+		
+		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyyMMdd");
+		Calendar time = Calendar.getInstance();
+		String format_time1 = format1.format(time.getTime());
+		
+		S_Date_att = new JTextField(format_time1);
 		S_Date_att.setHorizontalAlignment(SwingConstants.CENTER);
 		S_Date_att.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		S_Date_att.setColumns(10);
