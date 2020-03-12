@@ -44,7 +44,7 @@ public class main extends JFrame {
 	 * Create the frame.
 	 */
 	public main() {
-		setTitle("\uCD08\uAE30\uD654\uBA74");
+		setTitle("부산 IT 학생 관리 프로그램 로그인");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		setLocationRelativeTo(null);
@@ -61,7 +61,8 @@ public class main extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lbTitle = new JLabel("\uD559\uC0DD \uAD00\uB9AC \uD504\uB85C\uADF8\uB7A8");
-		lbTitle.setFont(new Font("맑은 고딕", Font.PLAIN, 22));
+		lbTitle.setForeground(Color.BLACK);
+		lbTitle.setFont(new Font("맑은 고딕", Font.BOLD, 22));
 		lbTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		lbTitle.setBounds(0, 10, 434, 39);
 		panel.add(lbTitle);
@@ -73,7 +74,7 @@ public class main extends JFrame {
 		panel.add(lbID);
 
 		textField_ID = new JTextField();
-		textField_ID.setBounds(162, 92, 116, 25);
+		textField_ID.setBounds(140, 92, 138, 25);
 		panel.add(textField_ID);
 		textField_ID.setColumns(10);
 		
@@ -84,7 +85,7 @@ public class main extends JFrame {
 		panel.add(lbPassword);
 
 		passwordField = new JPasswordField();
-		passwordField.setBounds(162, 131, 116, 25);
+		passwordField.setBounds(140, 131, 138, 25);
 		panel.add(passwordField);
 		
 		// 로그인 버튼
@@ -112,7 +113,7 @@ public class main extends JFrame {
 				new main_teacher_enroll().setVisible(true);
 			}
 		});
-		btnSignup.setBounds(325, 228, 97, 23);
+		btnSignup.setBounds(325, 222, 97, 29);
 		panel.add(btnSignup);
 		
 		JLabel lblNewLabel_2 = new JLabel("");

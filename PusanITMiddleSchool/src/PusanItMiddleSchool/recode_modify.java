@@ -19,10 +19,10 @@ import java.awt.Color;
 import javax.swing.border.LineBorder;
 import java.awt.SystemColor;
 
-public class student_modify extends JFrame {
+public class recode_modify extends JFrame {
 
 	private JPanel contentPane;
-	private static String index = null;
+	private static int index = 0;
 	private static String name = null;
 
 	/**
@@ -32,7 +32,7 @@ public class student_modify extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					student_modify frame = new student_modify(index,name);
+					recode_modify frame = new recode_modify(index,name);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,9 +44,9 @@ public class student_modify extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public student_modify(String index, String name) {
+	public recode_modify(int index, String name) {
 		setBounds(100, 100, 354, 249);
-		setTitle("학생 정보 수정");
+		setTitle("성적 수정");
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
@@ -54,7 +54,7 @@ public class student_modify extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\uD559\uC0DD \uC815\uBCF4 \uC218\uC815");
+		JLabel lblNewLabel = new JLabel("성적 수정");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 22));
@@ -80,7 +80,7 @@ public class student_modify extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//label.setText(field.getText());
 				System.out.println(index+" "+name+" ");
-				SQLPusanItMiddleSchool.student_update(index, name, textArea.getText());
+				SQLPusanItMiddleSchool.recode_update(index, name, textArea.getText());
 				dispose();
 			}
 			

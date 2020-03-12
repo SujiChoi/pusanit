@@ -67,7 +67,8 @@ public class student extends JFrame {
 				int row = table.rowAtPoint(e.getPoint());
 				int col = table.columnAtPoint(e.getPoint());
 				String[] headers = { "S_INDEX" , "S_NAME", "S_GENDER", "S_CLASS", "S_BIRTH","S_PHONE","S_NOTE"};
-				String sindex = new String((String) table.getModel().getValueAt(row, 0));				if(row >= 0 && col >= 0) {
+				String sindex = new String((String) table.getModel().getValueAt(row, 0));				
+				if(row >= 0 && col >= 0) {
 					//JOptionPane.showMessageDialog(null, row+","+col);
 					if(col==0) {
 						JOptionPane.showMessageDialog(null,"학생 번호는 수정 불가합니다.");
@@ -166,34 +167,6 @@ public class student extends JFrame {
 		lblNewLabel_2.setBounds(5, 587, 278, 70);
 		contentPane.add(lblNewLabel_2);
 		
-		table.addMouseListener(new MouseAdapter() { //클릭시 빈칸에 데이터 들어가도록 만들기
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				table.addKeyListener(new KeyListener() {
-					
-					@Override
-					public void keyTyped(KeyEvent e) {}
-					
-					@Override
-					public void keyReleased(KeyEvent e) {}
-					
-					@Override
-					public void keyPressed(KeyEvent e) {
-						if(e.getKeyCode() == 10) {
-							int row = table.getSelectedRow(); // 선택된 행 값을 인트로 반환
-							  int col = table.getSelectedColumn(); // 선택된 열 값을 인트로 변환
-							  String[] Slist = new String[7];
-							  for (int i = 0; i < 7; i++) {
-								  Slist[i] = new String((String) table.getModel().getValueAt(row, i ));  //모델에서 값 불러오기 
-							  }
-							  System.out.println(e.getKeyCode());
-							  SQLPusanItMiddleSchool.ModifyStudentTable(Slist[0],Slist[1],Slist[2],Slist[3],Slist[4],Slist[5],Slist[6]);
-							  // 학번 , 이름, 성별, 학반, 생년월일, 연락처, 기타
-						}
-						
-					}
-				});
-			}
-		});
+
 	}
 }

@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
@@ -128,6 +129,22 @@ public class attend extends JFrame {
 
 		JTable table = new JTable(model);
 		table.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
+		table.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				int row = table.rowAtPoint(e.getPoint());
+				int col = table.columnAtPoint(e.getPoint());
+				String[] headers = { "S_INDEX" , "A_DATE", "A_RESULT"};
+				String sindex = new String((String) table.getModel().getValueAt(row, 0));				
+				if(row >= 0 && col >= 0) {
+					if(col==0||col==1||col==2) {
+						JOptionPane.showMessageDialog(null,"학생 번호는 수정 불가합니다.");
+					}else if(col==3) {
+						new attend_modify(row+1,headers[1]).setVisible(true);}
+					else {
+						new attend_modify(row+1,headers[2]).setVisible(true);}
+				}
+			}
+		});
 		table.setRowHeight(30); // 테이블 높이
 		JScrollPane scrollPane = new JScrollPane(table);
 

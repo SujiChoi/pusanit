@@ -56,6 +56,22 @@ public class recode extends JFrame {
 		table.setRowHeight(30); // 테이블 높이
 		JScrollPane scrollPane = new JScrollPane(table);
 		
+		table.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				int row = table.rowAtPoint(e.getPoint());
+				int col = table.columnAtPoint(e.getPoint());
+				String[] headers = { "S_INDEX","S_NAME","S_KOREAN","S_MATH","S_ENGLISH","S_SCIENCE","S_SOCIETY","S_RNOTE"};
+				//String sindex = new String((String) table.getModel().getValueAt(row, 0));
+				if(row >= 0 && col >= 0) {
+					//JOptionPane.showMessageDialog(null, row+","+col);
+					if(col== 0|| col==1) {
+						JOptionPane.showMessageDialog(null,"학생 정보는 수정 불가합니다.");
+					}else {
+					new recode_modify(row+1,headers[col]).setVisible(true);}
+				}
+			}
+		});
+		
 		scrollPane.setLocation(5,128);
 		scrollPane.setSize(1167, 449);
 		

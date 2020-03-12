@@ -14,11 +14,11 @@ public class SQLPusanItMiddleSchool {
 		//creat_Student_Table();
 		//creat_Teacher_Table();
 		creat_Recode_Table();
-		//creat_SAbsent_Table();
-		//Input_Student("최수지","여","A1","20000101","서울시 강남구","없음");
+		creat_SAbsent_Table();
+		//Input_Student("20170312001","김가나","여","1A","20000124","01024515484","졸업");
 		//Input_Teacher("강사1","여","pusanit001","pusanit","20100101","01012345678");
-		//Input_Recode("1","최수지","60","70","80","90","100");
-		//Input_SAbsent("2","하지원","20200224","결석");  // 나중에 학번하고 이름 매칭 후 등록하고 테이블 만들기 때문에
+		Input_Recode("20170312001","김다라","60","70","80","90","100","중간");
+		Input_SAbsent("20170312001","김가나","20200224","결석");  // 나중에 학번하고 이름 매칭 후 등록하고 테이블 만들기 때문에
 	}
 	
 	public static void creat_Student_Table() {
@@ -27,7 +27,7 @@ public class SQLPusanItMiddleSchool {
 			PreparedStatement create = conn.prepareStatement(
 					"CREATE TABLE IF NOT EXISTS "
 					+"TBL_STUDENT("
-					+"S_INDEX int NOT NULL AUTO_INCREMENT,"  // 아이디는 나중에 수정 (오늘날짜 + 뭐?)
+					+"S_INDEX varChar(255),"  // 아이디는 나중에 수정 (오늘날짜 + 뭐?)
 					+"S_NAME varChar(255)," 
 					+"S_GENDER varChar(255),"
 					+"S_CLASS varChar(255),"
@@ -66,6 +66,7 @@ public class SQLPusanItMiddleSchool {
 			PreparedStatement create = conn.prepareStatement(
 					"CREATE TABLE IF NOT EXISTS "
 					+"TBL_RECODE("
+					+"INDEXS int NOT NULL AUTO_INCREMENT," //선생인덱스 1,2,3
 					+"S_INDEX varChar(255)," //학색인덱스
 					+"S_NAME varChar(255)," //학생이름
 					+"S_KOREAN varChar(255)," //국어
@@ -74,7 +75,7 @@ public class SQLPusanItMiddleSchool {
 					+"S_SCIENCE varChar(255)," //과학
 					+"S_SOCIETY varChar(255)," //사회
 					+"S_RNOTE varChar(255)," //시험날짜
-					+"KEY(S_INDEX))");
+					+"PRIMARY KEY(INDEXS))");
 			create.execute();
 			System.out.println("저장했습니다.");
 		}
@@ -87,10 +88,11 @@ public class SQLPusanItMiddleSchool {
 			PreparedStatement create = conn.prepareStatement(
 					"CREATE TABLE IF NOT EXISTS "
 					+"TBL_S_ABSENT("
+					+"INDEXS int NOT NULL AUTO_INCREMENT," //선생인덱스 1,2,3
 					+"S_INDEX varChar(255),"
 					+"A_DATE varChar(255)," //absent_date
 					+"A_RESULT varChar(255)," //absent_결과
-					+"KEY(S_INDEX))");
+					+"PRIMARY KEY(INDEXS))");
 			create.execute();
 			System.out.println("저장했습니다.");
 		}
@@ -180,31 +182,55 @@ public class SQLPusanItMiddleSchool {
 		}
 	}
 	
-	public static void update(String index, String name, String text) {
+	public static void student_update(String index, String name, String text) {
 		try {
 			Connection conn = getConnection(); // DB 연결 conn객체
 			PreparedStatement update = conn.prepareStatement(
 					"UPDATE tbl_student SET " +name+ "='"+text+"' WHERE S_INDEX="+index);
+			JOptionPane.showMessageDialog(null, "수정 완료 되었습니다.");
 			update.execute();
-			System.out.println("업데이트 되었습니다!");
 			
 			} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public static void Input_Student(String S_NAME,String S_GENDER,String S_CLASS,String S_BIRTH,String S_PHONE,String S_NOTE) {
+	public static void recode_update(int index, String name, String text) {
 		try {
-			Connection conn = getConnection(); // db 연결 conn객체
-			PreparedStatement create1 = conn.prepareStatement(
-					"insert into tbl_student(S_NAME,S_GENDER,S_CLASS,S_BIRTH,S_PHONE,S_NOTE)"
-					+ "values('"+S_NAME+"','"+S_GENDER+"','"+S_CLASS+"','"+S_BIRTH+"','"+S_PHONE+"','"+S_NOTE+"')"
-					);
-			create1.execute();
-			System.out.println("학생 정보가 저장했습니다.");		
-			}
-		catch(Exception e){}
+			Connection conn = getConnection(); // DB 연결 conn객체
+			PreparedStatement update = conn.prepareStatement(
+					"UPDATE tbl_recode SET " +name+ "='"+text+"' WHERE INDEXS="+index);
+			JOptionPane.showMessageDialog(null, "수정 완료 되었습니다.");
+			update.execute();
+			
+			} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
+	public static void attend_update(int index, String name, String text) {
+		try {
+			Connection conn = getConnection(); // DB 연결 conn객체
+			PreparedStatement update = conn.prepareStatement(
+					"UPDATE tbl_s_absent SET " +name+ "='"+text+"' WHERE INDEXS="+index);
+			JOptionPane.showMessageDialog(null, "수정 완료 되었습니다.");
+			update.execute();
+			
+			} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+//	public static void Input_Student(String S_INDEX,String S_NAME,String S_GENDER,String S_CLASS,String S_BIRTH,String S_PHONE,String S_NOTE) {
+//		try {
+//			Connection conn = getConnection(); // db 연결 conn객체
+//			PreparedStatement create1 = conn.prepareStatement(
+//					"insert into tbl_student(S_NAME,S_GENDER,S_CLASS,S_BIRTH,S_PHONE,S_NOTE)"
+//					+ "values('"+S_INDEX+"','"+S_NAME+"','"+S_GENDER+"','"+S_CLASS+"','"+S_BIRTH+"','"+S_PHONE+"','"+S_NOTE+"')"
+//					);
+//			create1.execute();
+//			System.out.println("학생 정보가 저장했습니다.");		
+//			}
+//		catch(Exception e){}
+//	}
 
 	public static void Input_SAbsent(String S_INDEX,String S_NAME,String A_DATE,String A_RESULT) {
 		try {
@@ -366,15 +392,11 @@ public class SQLPusanItMiddleSchool {
 					);
 			statement.setString(1, hid);
 			statement.setString(2, hpw);
-			System.out.println("BB");
 			ResultSet results = statement.executeQuery();
 			if(results.next()) { //결과값이 있으면 로그인이 됨
-				System.out.println("CC");
 				return true;
 				//원래 있던창 끄기
 			}else {
-				System.out.println("DD");
-				JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 다시 한번 확인해 주세요.");
 				return false;
 			}
 		}
@@ -428,12 +450,12 @@ public class SQLPusanItMiddleSchool {
 	}
 	
 	public static void Input_recode
-	(String S_INDEX, String S_KOREAN, String S_MATH, String S_ENGLISH, String S_SCIENCE, String S_SOCIETY) {
+	(String S_INDEX, String S_KOREAN, String S_MATH, String S_ENGLISH, String S_SCIENCE, String S_SOCIETY,String rnote) {
 	try {
 		Connection conn = getConnection(); // db 연결 conn객체
 		PreparedStatement create = conn.prepareStatement(
 				"insert into tbl_recode (S_INDEX, S_KOREAN, S_MATH, S_ENGLISH, S_SCIENCE, String S_SOCIETY)"
-				+ "values('" + S_INDEX + "','" + S_KOREAN + "','" + S_MATH + "','" + S_ENGLISH + "','" + S_SCIENCE + "','" + S_SOCIETY + "')"	 
+				+ "values('" + S_INDEX + "','" + S_KOREAN + "','" + S_MATH + "','" + S_ENGLISH + "','" + S_SCIENCE + "','" + S_SOCIETY + "','" +S_SOCIETY + "')"	 
 				);
 		create.execute();
 		System.out.println("성적 정보가 저장되었습니다.");
@@ -446,10 +468,8 @@ public class SQLPusanItMiddleSchool {
 		String url ="jdbc:mysql://localhost:3306/pusanttmiddleschooldb?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 		String user = "root";
 		String pass = "1234";
-		System.out.println("AA");
 		try {
 			Class.forName(drive);
-			System.out.println("AA");
 			Connection conn = DriverManager.getConnection(url, user, pass);
 			System.out.println("DB 연결 완료");
 			return conn;
