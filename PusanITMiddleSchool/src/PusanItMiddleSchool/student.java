@@ -163,7 +163,7 @@ public class student extends JFrame {
 		contentPane.add(panel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\\uC790\uBC14\uD559\uC2B5\\\uD504\uB85C\uC81D\uD2B8\\PusanITMiddleSchool\\img\\\uCEA1\uCC98.PNG"));
+		lblNewLabel_2.setIcon(new ImageIcon("img\\\uCEA1\uCC98.PNG"));
 		lblNewLabel_2.setBounds(5, 587, 278, 70);
 		contentPane.add(lblNewLabel_2);
 		

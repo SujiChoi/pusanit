@@ -117,7 +117,7 @@ public class main extends JFrame {
 		panel.add(btnSignup);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\\uC790\uBC14\uD559\uC2B5\\\uD504\uB85C\uC81D\uD2B8\\PusanITMiddleSchool\\img\\\uCEA1\uCC98.PNG"));
+		lblNewLabel_2.setIcon(new ImageIcon("img\\\uCEA1\uCC98.PNG"));
 		lblNewLabel_2.setBounds(12, 181, 278, 70);
 		panel.add(lblNewLabel_2);
 	}
