@@ -137,7 +137,6 @@ public class attend extends JFrame {
 				String sindex = new String((String) table.getModel().getValueAt(row, 0));				
 				if(row >= 0 && col >= 0) {
 					if(col==0||col==1||col==2) {
-						JOptionPane.showMessageDialog(null,"학생 번호는 수정 불가합니다.");
 					}else if(col==3) {
 						new attend_modify(row+1,headers[1]).setVisible(true);}
 					else {

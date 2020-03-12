@@ -10,13 +10,18 @@ import javax.swing.JOptionPane;
 
 public class SQLPusanItMiddleSchool {
 
+	// sql 에 pusanttmiddleschooldb 생성
+	
 	public static void main(String[] args) {
-		//creat_Student_Table();
-		//creat_Teacher_Table();
+		creat_Student_Table();
+		creat_Teacher_Table();
 		creat_Recode_Table();
 		creat_SAbsent_Table();
-		//Input_Student("20170312001","김가나","여","1A","20000124","01024515484","졸업");
-		//Input_Teacher("강사1","여","pusanit001","pusanit","20100101","01012345678");
+		Input_Student("20170312001","김가나","여자","1A","20100302","01021542148","졸업");
+		Input_Student("20170312002","김다라","남자","1A","20141012","01097845126","재학");
+		Input_Student("20170312003","김마바","남자","1A","20130608","01064527152","재학");
+		Input_Student("20170312004","김사아","여자","1A","20130205","01024515484","재학");
+		Input_Teacher("강사1","여자","pusanit001","pusanit","20100101","01012345678");
 		Input_Recode("20170312001","김다라","60","70","80","90","100","중간");
 		Input_SAbsent("20170312001","김가나","20200224","결석");  // 나중에 학번하고 이름 매칭 후 등록하고 테이블 만들기 때문에
 	}
