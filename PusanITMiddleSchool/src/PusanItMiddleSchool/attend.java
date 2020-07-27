@@ -48,7 +48,7 @@ public class attend extends JFrame {
 				}
 			}
 		});
-	}
+	} 
 
 	/**
 	 * Create the frame.

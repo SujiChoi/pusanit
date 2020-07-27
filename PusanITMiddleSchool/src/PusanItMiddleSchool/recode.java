@@ -158,11 +158,11 @@ public class recode extends JFrame {
 		lblNewLabel_2.setBounds(4, 581, 278, 70);
 		contentPane.add(lblNewLabel_2);
 		
+		//테이블 그리기
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {	
 				String[][] data = SQLPusanItMiddleSchool.getRecode();	//DB 데이터 연동				
 				model.setRowCount(0); //테이블 데이터 모두 삭제
-				//String[][] data = Customer.getCustomers();
 				for (int i = 0; i < data.length; i++) {
 					model.addRow(data[i]);
 				}

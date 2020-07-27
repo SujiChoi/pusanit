@@ -78,8 +78,6 @@ public class student_modify extends JFrame {
 		contentPane.add(panel);
 		btnNewButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				//label.setText(field.getText());
-				System.out.println(index+" "+name+" ");
 				SQLPusanItMiddleSchool.student_update(index, name, textArea.getText());
 				dispose();
 			}
