@@ -197,13 +197,13 @@ public class attend extends JFrame {
 		lblNewLabel_1_2_1.setBounds(57, 225, 95, 59);
 		panel.add(lblNewLabel_1_2_1);
 
-		JLabel lblNewLabel_1_2_1_1 = new JLabel("\uD2B9\uC774\uC0AC\uD56D");
+		JLabel lblNewLabel_1_2_1_1 = new JLabel("µî·Ï ¿©ºÎ");
 		lblNewLabel_1_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2_1_1.setFont(new Font("±¼¸²", Font.PLAIN, 14));
 		lblNewLabel_1_2_1_1.setBounds(57, 345, 95, 59);
 		panel.add(lblNewLabel_1_2_1_1);
 
-		JLabel lblNewLabel_1_2_3 = new JLabel("\uC804\uD654\uBC88\uD638");
+		JLabel lblNewLabel_1_2_3 = new JLabel("ÈÞ´ëÆù ¹øÈ£");
 		lblNewLabel_1_2_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2_3.setFont(new Font("±¼¸²", Font.PLAIN, 14));
 		lblNewLabel_1_2_3.setBounds(57, 285, 95, 59);

@@ -44,7 +44,7 @@ public class main extends JFrame {
 	 * Create the frame.
 	 */
 	public main() {
-		setTitle("부산 IT 학생 관리 프로그램 로그인");
+		setTitle("학생 관리 프로그램");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		setLocationRelativeTo(null);
@@ -67,7 +67,6 @@ public class main extends JFrame {
 		lbTitle.setBounds(0, 10, 434, 39);
 		panel.add(lbTitle);
 		
-		//아이디
 		JLabel lbID = new JLabel("\uC544\uC774\uB514");
 		lbID.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
 		lbID.setBounds(67, 88, 83, 29);
@@ -78,7 +77,6 @@ public class main extends JFrame {
 		panel.add(textField_ID);
 		textField_ID.setColumns(10);
 		
-		//비밀번호123
 		JLabel lbPassword = new JLabel("\uBE44\uBC00\uBC88\uD638");
 		lbPassword.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
 		lbPassword.setBounds(67, 127, 83, 29);
@@ -88,7 +86,6 @@ public class main extends JFrame {
 		passwordField.setBounds(140, 131, 138, 25);
 		panel.add(passwordField);
 		
-		// 로그인 버튼
 		JButton btnLogin = new JButton("\uB85C\uADF8\uC778");
 		btnLogin.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		btnLogin.addActionListener(new ActionListener() {
@@ -98,14 +95,13 @@ public class main extends JFrame {
 					new student().setVisible(true);
 					}
 				else {
-					JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 확인해 주세요.");
+					JOptionPane.showMessageDialog(null, "ㅁ");
 					}
 			}
 		});
 		btnLogin.setBounds(296, 106, 97, 39);
 		panel.add(btnLogin);
 		
-		//회원가입 버튼
 		JButton btnSignup = new JButton("\uD68C\uC6D0\uAC00\uC785");
 		btnSignup.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 		btnSignup.addActionListener(new ActionListener() {

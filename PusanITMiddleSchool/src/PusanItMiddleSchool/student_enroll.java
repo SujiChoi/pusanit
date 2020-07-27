@@ -160,13 +160,13 @@ public class student_enroll extends JFrame {
 		S_Phone_Field.setBounds(176, 296, 161, 30);
 		panel.add(S_Phone_Field);
 
-		JLabel Student_etc = new JLabel("\uAE30 \uD0C0");
+		JLabel Student_etc = new JLabel("µî·Ï ¿©ºÎ");
 		Student_etc.setHorizontalAlignment(SwingConstants.CENTER);
 		Student_etc.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 14));
 		Student_etc.setBounds(74, 340, 90, 30);
 		panel.add(Student_etc);
 
-		S_etc_Field = new JTextField();
+		S_etc_Field = new JTextField("µî·Ï");
 		S_etc_Field.setHorizontalAlignment(SwingConstants.CENTER);
 		S_etc_Field.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		S_etc_Field.setColumns(10);
