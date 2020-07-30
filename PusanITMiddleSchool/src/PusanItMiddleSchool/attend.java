@@ -7,6 +7,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URL;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -251,7 +252,8 @@ public class attend extends JFrame {
 		contentPane.add(panel_1);
 
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("img\\\uCEA1\uCC98.PNG"));
+		URL imageURL = getClass().getResource("main.png");
+		lblNewLabel_2.setIcon(new ImageIcon(imageURL));
 		lblNewLabel_2.setBounds(4, 581, 278, 70);
 		contentPane.add(lblNewLabel_2);
 

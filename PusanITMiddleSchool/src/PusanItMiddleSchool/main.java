@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
@@ -113,7 +114,8 @@ public class main extends JFrame {
 		panel.add(btnSignup);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("img\\\uCEA1\uCC98.PNG"));
+		URL imageURL = getClass().getResource("main.png");
+		lblNewLabel_2.setIcon(new ImageIcon(imageURL));
 		lblNewLabel_2.setBounds(12, 181, 278, 70);
 		panel.add(lblNewLabel_2);
 	}

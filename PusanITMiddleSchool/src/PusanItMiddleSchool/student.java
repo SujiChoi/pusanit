@@ -7,6 +7,7 @@ import javax.swing.border.*;
 import javax.swing.table.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.net.URL;
 
 
 public class student extends JFrame {
@@ -163,7 +164,8 @@ public class student extends JFrame {
 		contentPane.add(panel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("img\\\uCEA1\uCC98.PNG"));
+		URL imageURL = getClass().getResource("main.png");
+		lblNewLabel_2.setIcon(new ImageIcon(imageURL));
 		lblNewLabel_2.setBounds(5, 587, 278, 70);
 		contentPane.add(lblNewLabel_2);
 		
