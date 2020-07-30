@@ -114,7 +114,7 @@ public class main extends JFrame {
 		panel.add(btnSignup);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		URL imageURL = getClass().getResource("main.png");
+		URL imageURL = getClass().getResource("main1.png");
 		lblNewLabel_2.setIcon(new ImageIcon(imageURL));
 		lblNewLabel_2.setBounds(12, 181, 278, 70);
 		panel.add(lblNewLabel_2);

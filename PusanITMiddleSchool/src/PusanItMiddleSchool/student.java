@@ -164,7 +164,7 @@ public class student extends JFrame {
 		contentPane.add(panel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		URL imageURL = getClass().getResource("main.png");
+		URL imageURL = getClass().getResource("main1.png");
 		lblNewLabel_2.setIcon(new ImageIcon(imageURL));
 		lblNewLabel_2.setBounds(5, 587, 278, 70);
 		contentPane.add(lblNewLabel_2);
